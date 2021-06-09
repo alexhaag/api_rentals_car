@@ -1,0 +1,12 @@
+node_modules
+.dockerignore
+.eslintrc.json
+.eslintignore
+docker-compose.yml
+Dockerfile
+ormconfig.json
+tsconfig.json
+yarn-error.log
+yarn.lock
+prettier.config.js
+tmp
