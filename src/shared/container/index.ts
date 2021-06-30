@@ -1,5 +1,7 @@
 import { container } from 'tsyringe';
 
+import "@shared/container/providers";
+
 import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository';
 import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositories/CategoriesRepository';
 import { ISpecificationsRepository } from '@modules/cars/repositories/ISpecificationsRepository';
@@ -12,6 +14,10 @@ import { CarsRepository } from '@modules/cars/infra/typeorm/repositories/CarsRep
 
 import { ICarsImagesRepository } from "@modules/cars/repositories/ICarsImagesRepository";
 import { CarsImagesRepository } from "@modules/cars/infra/typeorm/repositories/CarsImagesRepository";
+import { RentalsRepository } from '@modules/rentals/infra/typeorm/repositories/RentalsRepository';
+import { IRentalsRepository } from '@modules/rentals/repositories/IRentalsRepository';
+import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
+import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositories/UsersTokenRepository';
 
 //ICategoriesRepository
 container.registerSingleton<ICategoriesRepository>(
@@ -37,5 +43,15 @@ container.registerSingleton<ICarsRepository>(
 container.registerSingleton<ICarsImagesRepository>(
   "CarsImagesRepository",
   CarsImagesRepository
+);
+
+container.registerSingleton<IRentalsRepository>(
+  "RentalsRepository",
+  RentalsRepository
+);
+
+container.registerSingleton<IUsersTokensRepository>(
+  "UsersTokensRepository",
+  UsersTokensRepository
 );
 
